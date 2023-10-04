@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anaSayfaFragment">
+
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.example.recipeapp.ui.fragment.anasayfa.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa" >
+        <action
+            android:id="@+id/action_anaSayfaFragment_to_recipeDetayFragment"
+            app:destination="@id/recipeDetayFragment" />
+        <action
+            android:id="@+id/action_anaSayfaFragment_to_recipeKayitFragment"
+            app:destination="@id/recipeKayitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeKayitFragment"
+        android:name="com.example.recipeapp.ui.fragment.recipekayit.RecipeKayitFragment"
+        android:label="fragment_recipe_kayit"
+        tools:layout="@layout/fragment_recipe_kayit" />
+    <fragment
+        android:id="@+id/recipeDetayFragment"
+        android:name="com.example.recipeapp.ui.fragment.recipedetay.RecipeDetayFragment"
+        android:label="fragment_recipe_detay"
+        tools:layout="@layout/fragment_recipe_detay" >
+        <argument
+            android:name="yemek"
+            app:argType="com.example.recipeapp.data.entity.Recipe" />
+    </fragment>
+</navigation>
